@@ -12,7 +12,7 @@ export default()=>{
             params:{
               limit:50,
               term:searchTerm,
-              location:'Myanmar'
+              location:'Singapore'
             }
         });
         setResult(response.data.businesses);
