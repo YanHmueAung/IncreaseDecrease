@@ -8,7 +8,7 @@ import ResultList from '../components/ResultList';
 const SearchScreen=()=>{
     const [term,setTerm]=useState('');
     const [SearchApi,result,errorMessage]=useResult()
-    console.log(result)
+    //console.log(result)
 
     const filterResultByPrice=(price)=>{
         if(!result) return <Text>No result</Text>;
