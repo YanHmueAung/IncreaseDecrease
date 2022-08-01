@@ -6,7 +6,7 @@ export default()=>{
     const [errorMessage,setErrorMessage]=useState('');
 
     const SearchApi=async (searchTerm)=>{
-        console.log('Hi t')
+        // console.log('Hi t')
     try{
         const response=await yelp.get('/search',{
             params:{
@@ -16,8 +16,9 @@ export default()=>{
             }
         });
         setResult(response.data.businesses);
+        setErrorMessage('')
     }catch(e){
-        console.log('khe')
+       // console.log('khe')
         setErrorMessage('wrong');
     }
     };

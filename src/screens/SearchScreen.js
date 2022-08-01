@@ -11,7 +11,7 @@ const SearchScreen=()=>{
     console.log(result)
 
     const filterResultByPrice=(price)=>{
-        if(!result) return <Text></Text>;
+        if(!result) return <Text>No result</Text>;
         return result.filter((results)=>{
             return results.price === price
         })
@@ -21,15 +21,27 @@ const SearchScreen=()=>{
             <SearchBar 
             term={term} 
             searchTerm={setTerm}
-            onTermSubmit={SearchApi}
+            onTermSubmit={()=>SearchApi(term)}
             />
             {errorMessage ? <Text>{errorMessage}</Text>:null}
             
             {/* <Text>we found {result.length} results</Text> */}
             <ScrollView>
-            <ResultList result={filterResultByPrice('$')} title='Cost Effective'/>
-            <ResultList result={filterResultByPrice('$$')} title='Bit Pricer'/>
-            <ResultList result={filterResultByPrice('$$$')} title='Big Spender'/>
+            <ResultList 
+            result={filterResultByPrice('$')} 
+            title='Cost Effective'
+            
+            />
+            <ResultList 
+            result={filterResultByPrice('$$')} 
+            title='Bit Pricer'
+           
+            />
+            <ResultList 
+            result={filterResultByPrice('$$$')} 
+            title='Big Spender'
+           
+            />
             </ScrollView>
         </View>
     )

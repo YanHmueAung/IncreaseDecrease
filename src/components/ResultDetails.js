@@ -4,7 +4,7 @@ const im='https://dominionmartialarts.com/wp-content/uploads/2017/04/default-ima
 const ResultDetails=({result})=>{
     return(
         <View style={style.container}>
-            {console.log(result.image_url)}
+            {/* {console.log(result.image_url)} */}
             {(!result.image_url)? 
             <Image 
             style={style.image} 
